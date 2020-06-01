@@ -1,12 +1,11 @@
-module.exports = {
+var espTouchSmartconfigName = "espTouchSmartconfig"
 
-	start:function(ssid,bssid,pass,broadcast,maxDevices,encKey, successCallback, errorCallback){
-		cordova.exec(successCallback, errorCallback, "espTouchSmartconfig", "startConfig", [ssid,bssid,pass,broadcast, maxDevices, encKey]);
-	},
-	stop:function(successCallback, errorCallback){
-		cordova.exec(successCallback, errorCallback, "espTouchSmartconfig", "stopConfig", []);
+var espTouchSmartconfig = {
+    start: function (ssid, bssid, pass, broadcast, maxDevices, encKey, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, espTouchSmartconfigName, "startConfig", [ssid, bssid, pass, broadcast, maxDevices, encKey]);
     },
-    requestLocationPermission: function(successCallback, errorCallback){
-        cordova.exec(successCallback, errorCallback, "espTouchSmartconfig", "requestLocationPermission", []);
+    stop: function (successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, espTouchSmartconfigName, "stopConfig", []);
     }
 }
+module.exports = espTouchSmartconfig
